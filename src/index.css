@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--maincolor: rgb(119, 127, 217);
+	--bordercolor: rgba(199, 199, 199, 0.082);
+	--hovercolor: rgba(81, 81, 82, 0.129);
+	--percentagepositive: rgba(89, 244, 89, 0.781);
+	--percentagenegative: rgb(240, 98, 98);
+	--backgroundcolorblack: #1e2126;
+	--backgroundcolorblack2: #1b1e23;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Zen Kaku Gothic New", "Segoe UI", "Roboto",
+		"Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-color: var(--backgroundcolorblack);
+	color: #f4f4f4;
+}
+
+a {
+	color: #f4f4f4;
+	text-decoration: none;
+}
+
+h1 {
+	margin: 0.5rem;
+	text-align: center;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
