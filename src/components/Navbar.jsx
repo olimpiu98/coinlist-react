@@ -1,22 +1,17 @@
 import React from "react";
 import "./css/Navbar.css";
 import { GiTwoCoins } from "react-icons/gi";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
-
-const navigation = [
-	{ name: <Link to='/'>Dashboard</Link> },
-	{ name: "Team", href: "#", current: true },
-	{ name: "Projects", href: "#", current: true },
-	{ name: "Calendar", href: "#", current: true },
-];
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(" ");
 }
 
 const Navbar = () => {
+	const activLink = `btn btn-ghost btn-active text-sm font-medium`;
+	const defaultLink = `btn btn-ghost text-sm font-medium`;
 	return (
 		<Disclosure as='nav' className='bg-neutral z-10'>
 			{({ open }) => (
@@ -35,28 +30,42 @@ const Navbar = () => {
 								</Disclosure.Button>
 							</div>
 							<div className='flex-1 flex items-center justify-center sm:items-stretch sm:justify-start'>
-								<Link to='/' className='flex-shrink-0 flex items-center'>
+								<NavLink to='/' className='flex-shrink-0 flex items-center'>
 									<GiTwoCoins className='icon ' />
 									<h1>
 										Coin <span className='purple'>Statistics</span>
 									</h1>
-								</Link>
+								</NavLink>
 								<div className='hidden sm:block sm:ml-6'>
 									<div className='flex space-x-4'>
-										{navigation.map((item) => (
-											<span
-												key={item.name}
-												className={classNames(
-													item.current
-														? "text-gray-500"
-														: "hover:bg-gray-700 hover:text-white hover:transition-all transition ease-in-out duration-700",
-													"px-3 py-2 rounded-md text-sm font-medium"
-												)}
-												aria-current={item.current ? "page" : undefined}
-											>
-												{item.name}
-											</span>
-										))}
+										<NavLink
+											key='dashboard'
+											to='/'
+											className={({ isActive }) => (isActive ? activLink : defaultLink)}
+										>
+											Dashboard
+										</NavLink>
+										<NavLink
+											key='team'
+											to='/team'
+											className={({ isActive }) => (isActive ? activLink : defaultLink)}
+										>
+											Team
+										</NavLink>
+										<NavLink
+											key='projects'
+											to='/projects'
+											className={({ isActive }) => (isActive ? activLink : defaultLink)}
+										>
+											Projects
+										</NavLink>
+										<NavLink
+											key='calendar'
+											to='/calendar'
+											className={({ isActive }) => (isActive ? activLink : defaultLink)}
+										>
+											Calendar
+										</NavLink>
 									</div>
 								</div>
 							</div>
@@ -92,7 +101,7 @@ const Navbar = () => {
 										<Menu.Items className='origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none'>
 											<Menu.Item>
 												{({ active }) => (
-													<Link
+													<NavLink
 														to='#'
 														className={classNames(
 															active ? "bg-gray-100" : "",
@@ -100,12 +109,12 @@ const Navbar = () => {
 														)}
 													>
 														Your Profile
-													</Link>
+													</NavLink>
 												)}
 											</Menu.Item>
 											<Menu.Item>
 												{({ active }) => (
-													<Link
+													<NavLink
 														to='#'
 														className={classNames(
 															active ? "bg-gray-100" : "",
@@ -113,12 +122,12 @@ const Navbar = () => {
 														)}
 													>
 														Settings
-													</Link>
+													</NavLink>
 												)}
 											</Menu.Item>
 											<Menu.Item>
 												{({ active }) => (
-													<Link
+													<NavLink
 														to='#'
 														className={classNames(
 															active ? "bg-gray-100" : "",
@@ -126,7 +135,7 @@ const Navbar = () => {
 														)}
 													>
 														Sign out
-													</Link>
+													</NavLink>
 												)}
 											</Menu.Item>
 										</Menu.Items>
@@ -137,23 +146,53 @@ const Navbar = () => {
 					</div>
 
 					<Disclosure.Panel className='sm:hidden'>
-						<div className='px-2 pt-2 pb-3 space-y-1'>
-							{navigation.map((item) => (
-								<Disclosure.Button
-									key={item.name}
-									as='a'
-									href={item.href}
-									className={classNames(
-										item.current
-											? "bg-gray-900 text-white"
-											: "text-gray-300 hover:bg-gray-700 hover:text-white",
-										"block px-3 py-2 rounded-md text-base font-medium"
-									)}
-									aria-current={item.current ? "page" : undefined}
+						<div className='grid justify-items-stretch p-3 space-y-4 '>
+							<Disclosure.Button>
+								<NavLink
+									key='dashboard'
+									to='/'
+									className={({ isActive }) =>
+										isActive
+											? " bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium"
+											: " text-gray-300 block px-3 py-2 rounded-md text-base font-medium"
+									}
 								>
-									{item.name}
-								</Disclosure.Button>
-							))}
+									Dashboarddsa
+								</NavLink>
+								<NavLink
+									key='team'
+									to='/team'
+									className={({ isActive }) =>
+										isActive
+											? "bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium"
+											: "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+									}
+								>
+									Team
+								</NavLink>
+								<NavLink
+									key='projects'
+									to='/projects'
+									className={({ isActive }) =>
+										isActive
+											? "bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium"
+											: "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+									}
+								>
+									Projects
+								</NavLink>
+								<NavLink
+									key='calendar'
+									to='/calendar'
+									className={({ isActive }) =>
+										isActive
+											? "bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium text-a"
+											: "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+									}
+								>
+									Calendar
+								</NavLink>
+							</Disclosure.Button>
 						</div>
 					</Disclosure.Panel>
 				</>
