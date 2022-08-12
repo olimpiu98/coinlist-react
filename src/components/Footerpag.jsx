@@ -3,7 +3,7 @@ import { Footer } from "react-daisyui";
 
 const Footerpag = () => {
 	return (
-		<Footer className='mt-10 p-10 bg-neutral text-neutral-content bottom-0 left-0'>
+		<Footer className='flex-grow mt-10 p-10 bg-neutral text-neutral-content bottom-0 left-0'>
 			<div>
 				<svg
 					width='50'

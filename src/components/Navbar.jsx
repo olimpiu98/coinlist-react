@@ -1,9 +1,9 @@
 import React from "react";
-import "./css/Navbar.css";
 import { GiTwoCoins } from "react-icons/gi";
 import { NavLink } from "react-router-dom";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
+import Globaldata from "./coinsinfo/Globaldata";
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(" ");
@@ -16,6 +16,7 @@ const Navbar = () => {
 		<Disclosure as='nav' className='bg-neutral z-10'>
 			{({ open }) => (
 				<>
+					<Globaldata />
 					<div className='max-w-7xl mx-auto px-2 sm:px-6 lg:px-8'>
 						<div className='relative flex items-center justify-between h-16'>
 							<div className='absolute inset-y-0 left-0 flex items-center sm:hidden'>
@@ -29,7 +30,7 @@ const Navbar = () => {
 									)}
 								</Disclosure.Button>
 							</div>
-							<div className='flex-1 flex items-center justify-center sm:items-stretch sm:justify-start'>
+							<div className='logo flex-1 flex items-center justify-center sm:items-stretch sm:justify-start'>
 								<NavLink to='/' className='flex-shrink-0 flex items-center'>
 									<GiTwoCoins className='icon ' />
 									<h1>

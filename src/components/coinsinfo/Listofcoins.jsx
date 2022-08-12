@@ -1,5 +1,4 @@
 import React from "react";
-import "./css/coinsinfo.css";
 import { Link } from "react-router-dom";
 import Coin from "./Coinpage";
 

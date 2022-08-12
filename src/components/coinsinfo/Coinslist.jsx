@@ -1,6 +1,5 @@
 import React from "react";
 import Listofcoins from "./Listofcoins";
-import "./css/coinsinfo.css";
 
 const coins = (props) => {
 	return (

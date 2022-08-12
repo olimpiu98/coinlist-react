@@ -11,15 +11,17 @@ function App() {
 	return (
 		<>
 			<Navbar />
-			<Routes>
-				<Route path='/' element={<Dashboard />} />
-				<Route path='/coin' element={<Coin />}>
-					<Route path=':coinId' element={<Coin />} />
-				</Route>
-				<Route path='/team' element={<Team />} />
-				<Route path='/projects' element={<Projects />} />
-				<Route path='/calendar' element={<Calendar />} />
-			</Routes>
+			<div className='responsive'>
+				<Routes>
+					<Route path='/' element={<Dashboard />} />
+					<Route path='/coin' element={<Coin />}>
+						<Route path=':coinId' element={<Coin />} />
+					</Route>
+					<Route path='/team' element={<Team />} />
+					<Route path='/projects' element={<Projects />} />
+					<Route path='/calendar' element={<Calendar />} />
+				</Routes>
+			</div>
 			<Footerpag />
 		</>
 	);

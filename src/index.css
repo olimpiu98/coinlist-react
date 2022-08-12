@@ -11,6 +11,7 @@
 	--percentagenegative: rgb(240, 98, 98);
 	--backgroundcolorblack: #1e2126;
 	--backgroundcolorblack2: #1b1e23;
+	--textdefaultcolor: #f4f4f4;
 }
 
 * {
@@ -18,9 +19,11 @@
 	margin: 0;
 	padding: 0;
 }
+html {
+	margin: 0;
+}
 
 body {
-	margin: 0;
 	font-family: -apple-system, BlinkMacSystemFont, "Zen Kaku Gothic New", "Segoe UI", "Roboto",
 		"Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 	-webkit-font-smoothing: antialiased;
@@ -29,8 +32,13 @@ body {
 	color: #f4f4f4;
 }
 
+.responsive {
+	min-height: 100vh;
+	padding-bottom: 1vh;
+}
+
 a {
-	color: #f4f4f4;
+	color: var(--maincolor);
 }
 
 h1 {
@@ -41,3 +49,271 @@ h1 {
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
+
+body::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
+	background-color: var(--backgroundcolorblack);
+}
+
+body::-webkit-scrollbar {
+	width: 12px;
+	background-color: var(--backgroundcolorblack);
+}
+
+body::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	background-color: #555;
+}
+
+/*! COINPAGE.CSS */
+.coin-container .content {
+	max-width: 1140px;
+	height: auto;
+	margin: 1rem auto;
+	padding: 0.7rem 1rem;
+	display: flex;
+	flex-direction: column;
+	background-color: var(--backgroundcolorblack);
+	box-shadow: 0px 0px 12px #111;
+	border-radius: 8px;
+}
+
+.rank {
+	margin: 0.5 0;
+}
+
+.rank-btn {
+	border: 1px solid var(--maincolor);
+	box-shadow: 0px 0px 0px var(--maincolor);
+	background-color: var(--maincolor);
+	border-radius: 8px;
+	padding: 0.2rem;
+}
+.info {
+	display: grid;
+	grid-template-columns: 9fr 0.5fr;
+}
+
+.info .coin-heading {
+	display: flex;
+	align-items: center;
+	margin: 1rem 0;
+}
+
+.info .coin-price {
+	display: flex;
+	align-items: center;
+}
+
+.info p {
+	padding-right: 1rem;
+}
+
+table {
+	margin: 0.5rem 0;
+}
+
+td,
+th {
+	padding: 8px;
+	text-align: center;
+}
+
+th {
+	background-color: var(--backgroundcolorblack2);
+}
+
+.coin-stats {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	width: 100%;
+	gap: 2rem;
+	background-color: var(--backgroundcolorblack);
+}
+
+.coin-stats .row {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid var(--bordercolor);
+	margin: 0.6rem 0;
+	padding-bottom: 0.5rem;
+}
+
+.about h3 {
+	margin: 1rem 0;
+}
+
+@media screen and (max-width: 700px) {
+	.coin-container .content {
+		margin: 0.5rem;
+		padding: 0 0.5rem;
+	}
+
+	.coin-stats {
+		grid-template-columns: 1fr;
+	}
+
+	td,
+	th {
+		padding: 3px;
+	}
+	.info {
+		display: flex;
+		flex-direction: column;
+	}
+	.coin-heading,
+	.coin-price {
+		justify-content: center;
+		margin: 1rem;
+	}
+	.rank {
+		padding: 0.2rem;
+		margin-top: 0.5rem;
+	}
+}
+
+.positive {
+	color: var(--percentagepositive);
+}
+
+.negative {
+	color: var(--percentagenegative);
+}
+/*! COINPAGE.CSS */
+/*! NAVBAR.CSS */
+.navbar {
+	display: flex;
+}
+
+.logo a {
+	text-decoration: none;
+	color: var(--textdefaultcolor);
+}
+
+.icon {
+	font-size: 2rem;
+	color: var(--maincolor);
+	box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+	transform: scale(1);
+	animation: pulse 2s infinite;
+	border-radius: 100%;
+	text-decoration: none;
+}
+
+.purple {
+	color: var(--maincolor);
+	text-decoration: none;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+		box-shadow: 0 0 0 0 rgba(119, 127, 217, 0);
+	}
+
+	25% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(119, 127, 217, 0);
+	}
+
+	50% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px rgba(119, 127, 217, 0);
+	}
+
+	75% {
+		transform: scale(1.05);
+		box-shadow: 0 0 0 10px rgba(119, 127, 217, 0);
+	}
+
+	100% {
+		transform: scale(1);
+		box-shadow: 0 0 0 0 rgba(119, 127, 217, 0.005);
+	}
+}
+/*! NAVBAR.CSS */
+/*! COININFO.CSS */
+.container {
+	max-width: 90vw;
+	height: auto;
+	margin: auto;
+	z-index: 1;
+}
+
+.container a {
+	text-decoration: none;
+	color: var(--textdefaultcolor);
+}
+
+.heading {
+	position: -webkit-sticky; /* Safari */
+	position: sticky;
+	z-index: 1;
+	top: -0.1rem;
+	display: grid;
+	justify-items: center;
+	grid-template-columns: 50px repeat(6, 1fr);
+	grid-auto-flow: column;
+	border-bottom: 1px solid var(--bordercolor);
+	border-top: 1px solid var(--bordercolor);
+	margin-top: 1rem;
+	padding: 0.5rem 0;
+	font-weight: 700;
+	background-color: var(--backgroundcolorblack2);
+}
+.coin-name {
+	text-transform: uppercase;
+	font-size: 0.8em;
+}
+
+.coin-row {
+	display: grid;
+	justify-items: center;
+	grid-template-columns: 50px repeat(6, 1fr);
+	grid-auto-flow: column;
+	border-bottom: 1px solid var(--bordercolor);
+	padding: 1.5rem 0;
+}
+
+.coin-row:hover {
+	background-color: var(--hovercolor);
+	transition: 0.3s ease-in-out;
+}
+.img-inlist {
+	height: 25px;
+	width: auto;
+	margin: 0 10px;
+}
+
+.img-symbol {
+	display: flex;
+}
+
+.supply-text {
+	text-transform: uppercase;
+	font-size: 0.8rem;
+}
+
+@media screen and (max-width: 720px) {
+	.hide-mobile {
+		display: none;
+	}
+	.coin-row {
+		grid-template-columns: 50px repeat(3, 0.5fr);
+	}
+	.heading {
+		grid-template-columns: 50px repeat(3, 0.5fr);
+	}
+}
+
+.positive {
+	color: var(--percentagepositive);
+}
+
+.negative {
+	color: var(--percentagenegative);
+}
+
+/*! COININFO.CSS */
