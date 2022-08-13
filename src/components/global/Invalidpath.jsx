@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { TbMoodCrazyHappy } from "react-icons/tb";
 import { Link } from "react-router-dom";
 
-const Invalidepath = () => {
+const Invalidpath = () => {
 	const location = useLocation();
 	console.log(location.pathname);
 	return (
@@ -14,7 +14,7 @@ const Invalidepath = () => {
 						<div className='border border-[#7b83d64f] rounded-lg shadow-lg p-5 md:p-10 mx-2'>
 							<div className='text-center'>
 								<h2 className='text-4xl tracking-tight leading-10 font-extrabold text-gray-300 sm:text-5xl sm:leading-none md:text-6xl'>
-									Invalide path <span className='text-[#777fd9] text-lg'>{location.pathname}</span>
+									Invalid path <span className='text-[#777fd9] text-lg'>{location.pathname}</span>
 								</h2>
 								<p className='text-md md:text-xl mt-10'>Shhhh.... this is a dead road.</p>
 								<p className='text-md md:text-xl'>
@@ -39,4 +39,4 @@ const Invalidepath = () => {
 	);
 };
 
-export default Invalidepath;
+export default Invalidpath;
