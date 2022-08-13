@@ -61,7 +61,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar {
-	width: 12px;
+	width: 5px;
 	background-color: var(--backgroundcolorblack);
 }
 
@@ -241,7 +241,7 @@ th {
 /*! NAVBAR.CSS */
 /*! COININFO.CSS */
 .container {
-	max-width: 90vw;
+	max-width: 85vw;
 	height: auto;
 	margin: auto;
 	z-index: 1;
@@ -345,6 +345,9 @@ th {
 	.heading,
 	.heading-exchanges {
 		grid-template-columns: 50px repeat(3, 0.5fr);
+	}
+	.container {
+		max-width: 100vw;
 	}
 }
 

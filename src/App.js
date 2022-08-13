@@ -6,11 +6,13 @@ import Footerpag from "./components/Footerpag";
 import Projects from "./components/Projects";
 import Calendar from "./components/Calendar";
 import Exchanges from "./components/Exchanges";
+import ScrollButton from "./components/utility/ScrollButton";
 
 function App() {
 	return (
 		<>
 			<Navbar />
+			<ScrollButton />
 			<div className='responsive'>
 				<Routes>
 					<Route path='/' element={<Dashboard />} />
