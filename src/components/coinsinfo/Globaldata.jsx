@@ -27,7 +27,7 @@ const Globaldata = () => {
 					{stats.active_cryptocurrencies ? (
 						<p className='align-middle text-sm'>
 							Coins:{" "}
-							<Link to='/' className='text-amber-400 text-xs font-bold hover:text-orange-300'>
+							<Link to='/' className='text-amber-400 text-xs font-bold hover:text-amber-500'>
 								{stats.active_cryptocurrencies}
 							</Link>
 						</p>
@@ -37,7 +37,7 @@ const Globaldata = () => {
 							Exchanges:{" "}
 							<Link
 								to='/exchanges'
-								className='text-amber-400 text-xs font-bold hover:text-orange-50'
+								className='text-amber-400 text-xs font-bold hover:text-amber-500'
 							>
 								{stats.markets}
 							</Link>
