@@ -20,9 +20,7 @@ const Underconstruction = () => {
 							</div>
 							<div className='flex flex-wrap mt-10 justify-center'>
 								<div className='m-3 '>
-									<a href='https://twitter.com/tic_oli' title='Olimpiu On Twitter'>
-										<IoMdConstruct className='delay-100 duration-300 text-9xl font-bold hover:text-[#777fd9]' />
-									</a>
+									<IoMdConstruct className='delay-100 duration-300 text-9xl font-bold hover:text-[#777fd9]' />
 								</div>
 							</div>
 						</div>
