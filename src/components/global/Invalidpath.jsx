@@ -16,12 +16,13 @@ const Invalidpath = () => {
 								<h2 className='text-4xl tracking-tight leading-10 font-extrabold text-gray-300 sm:text-5xl sm:leading-none md:text-6xl'>
 									Invalid path <span className='text-[#777fd9] text-lg'>{location.pathname}</span>
 								</h2>
-								<p className='text-md md:text-xl mt-10'>Shhhh.... this is a dead road.</p>
+								<p className='text-md md:text-xl mt-10'>Shhhhi.... this is a dead road.</p>
 								<p className='text-md md:text-xl'>
 									Go back to{" "}
 									<Link to='/'>
-										<span className='underline hover:text-[#777fd9]'>Dashboard</span>
-									</Link>
+										<span className='underline hover:text-[#777fd9]'>main page</span>
+									</Link>{" "}
+									!
 								</p>
 							</div>
 							<div className='flex flex-wrap mt-10 justify-center'>
