@@ -1,6 +1,6 @@
 import React from "react";
 
-import { TbMoodCrazyHappy } from "react-icons/tb";
+import { IoMdConstruct } from "react-icons/io";
 
 const Underconstruction = () => {
 	return (
@@ -14,14 +14,14 @@ const Underconstruction = () => {
 									Under construction <span className='text-[#777fd9] text-base'>page</span>
 								</h2>
 								<p className='text-md md:text-xl mt-10'>
-									Shhhh.... We are now sleeping and dreaming about new features to implement.
+									Hmmmm.... We are now sleeping and dreaming about new features to implement.
 								</p>
 								<p className='text-md md:text-xl'> Will be back soon.</p>
 							</div>
 							<div className='flex flex-wrap mt-10 justify-center'>
 								<div className='m-3 '>
 									<a href='https://twitter.com/tic_oli' title='Olimpiu On Twitter'>
-										<TbMoodCrazyHappy className='animate-bounce delay-100 duration-300 text-9xl font-bold hover:text-[#777fd9]' />
+										<IoMdConstruct className='delay-100 duration-300 text-9xl font-bold hover:text-[#777fd9]' />
 									</a>
 								</div>
 							</div>

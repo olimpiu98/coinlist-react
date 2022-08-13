@@ -7,14 +7,16 @@ import Projects from "./components/Projects";
 import Calendar from "./components/Calendar";
 import Exchanges from "./components/Exchanges";
 import ScrollButton from "./components/utility/ScrollButton";
+import Invalidepath from "./components/global/Invalidepath";
 
 function App() {
 	return (
 		<>
-			<Navbar />
 			<ScrollButton />
 			<div className='responsive'>
+				<Navbar />
 				<Routes>
+					<Route path='/*' element={<Invalidepath />} />
 					<Route path='/' element={<Dashboard />} />
 					<Route path='/coin' element={<Coin />}>
 						<Route path=':coinId' element={<Coin />} />
