@@ -1,7 +1,8 @@
 import React from "react";
+import Underconstruction from "./utility/Underconstruction";
 
 const Projects = () => {
-	return <div>Projects</div>;
+	return <Underconstruction />;
 };
 
 export default Projects;

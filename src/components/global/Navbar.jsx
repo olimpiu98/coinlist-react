@@ -3,7 +3,7 @@ import { GiTwoCoins } from "react-icons/gi";
 import { NavLink } from "react-router-dom";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
-import Globaldata from "./coinsinfo/Globaldata";
+import Globaldata from "../coinsinfo/Globaldata";
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(" ");

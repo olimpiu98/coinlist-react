@@ -1,8 +1,8 @@
 import Dashboard from "./components/Dashboard";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/global/Navbar";
 import { Routes, Route } from "react-router-dom";
 import Coin from "./components/coinsinfo/Coinpage";
-import Footerpag from "./components/Footerpag";
+import Footerpag from "./components/global/Footerpag";
 import Projects from "./components/Projects";
 import Calendar from "./components/Calendar";
 import Exchanges from "./components/Exchanges";
