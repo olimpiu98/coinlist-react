@@ -69,7 +69,10 @@ const Coin = () => {
 													: "negative"
 											}
 										>
-											{coin.market_data.price_change_percentage_1h_in_currency.usd.toFixed(2)}%
+											{coin.market_data.price_change_percentage_1h_in_currency.usd
+												? coin.market_data.price_change_percentage_1h_in_currency.usd.toFixed(2)
+												: 0}
+											%
 										</p>
 									) : null}
 								</td>
@@ -134,7 +137,10 @@ const Coin = () => {
 													: "negative"
 											}
 										>
-											{coin.market_data.price_change_percentage_1y_in_currency.usd.toFixed(2)}%
+											{coin.market_data.price_change_percentage_1y_in_currency.usd
+												? coin.market_data.price_change_percentage_1y_in_currency.usd.toFixed(2)
+												: null}
+											%
 										</p>
 									</td>
 								) : null}
