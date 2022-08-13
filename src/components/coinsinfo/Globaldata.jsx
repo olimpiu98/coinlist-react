@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Globaldata = () => {
 	const [stats, setStats] = useState([]);
@@ -26,14 +27,20 @@ const Globaldata = () => {
 					{stats.active_cryptocurrencies ? (
 						<p className='align-middle text-sm'>
 							Coins:{" "}
-							<span className='text-amber-400 text-xs font-bold'>
+							<Link to='/' className='text-amber-400 text-xs font-bold hover:text-orange-50'>
 								{stats.active_cryptocurrencies}
-							</span>
+							</Link>
 						</p>
 					) : null}
 					{stats.markets ? (
 						<p className='align-middle text-sm'>
-							Exchanges: <span className='text-amber-400 text-xs font-bold'>{stats.markets}</span>
+							Exchanges:{" "}
+							<Link
+								to='/exchanges'
+								className='text-amber-400 text-xs font-bold hover:text-orange-50'
+							>
+								{stats.markets}
+							</Link>
 						</p>
 					) : null}
 					{stats.active_cryptocurrencies ? (

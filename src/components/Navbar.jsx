@@ -47,11 +47,11 @@ const Navbar = () => {
 											Dashboard
 										</NavLink>
 										<NavLink
-											key='team'
-											to='/team'
+											key='exchanges'
+											to='/exchanges'
 											className={({ isActive }) => (isActive ? activLink : defaultLink)}
 										>
-											Team
+											Exchanges
 										</NavLink>
 										<NavLink
 											key='projects'
@@ -161,15 +161,15 @@ const Navbar = () => {
 									Dashboarddsa
 								</NavLink>
 								<NavLink
-									key='team'
-									to='/team'
+									key='exchanges'
+									to='/exchanges'
 									className={({ isActive }) =>
 										isActive
 											? "bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium"
 											: "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
 									}
 								>
-									Team
+									Exchanges
 								</NavLink>
 								<NavLink
 									key='projects'

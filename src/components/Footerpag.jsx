@@ -23,12 +23,23 @@ const Footerpag = () => {
 
 			<div>
 				<Footer.Title>Services</Footer.Title>
+				<p>Blockchain Explorer</p>
+				<p>Crypto Indices</p>
+				<p>Sitemap</p>
 			</div>
 			<div>
-				<Footer.Title>Company</Footer.Title>
+				<Footer.Title>Support</Footer.Title>
+				<p>Request Form</p>
+				<p>Contact Support</p>
+				<p>FAQ</p>
+				<p>Glossary</p>
 			</div>
 			<div>
-				<Footer.Title>Legal</Footer.Title>
+				<Footer.Title>Social</Footer.Title>
+				<p>Facebook</p>
+				<p>Twitter</p>
+				<p>Telegram</p>
+				<p>Instagram</p>
 			</div>
 		</Footer>
 	);
