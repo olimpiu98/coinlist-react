@@ -28,7 +28,7 @@ const Dashboard = () => {
 		return () => {
 			cancelToken.cancel();
 		};
-	}, []);
+	}, [url]);
 
 	return (
 		<div>
