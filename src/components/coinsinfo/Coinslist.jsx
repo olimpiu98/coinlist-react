@@ -13,6 +13,7 @@ const coins = (props) => {
 					<p className='hide-mobile'>Volume</p>
 					<p className='hide-mobile'>Mk. Cap</p>
 					<p className='hide-mobile'>Supply</p>
+					<p className='hide-mobile'>From ATH</p>
 				</div>
 				{props.coins.map((coins) => {
 					return <Listofcoins coins={coins} key={coins.id} />;

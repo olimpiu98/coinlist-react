@@ -5,7 +5,7 @@ const Listofexchanges = (props) => {
 	return (
 		<div className='container'>
 			<div>
-				<div className='heading'>
+				<div className='heading-exchanges'>
 					<p>#</p>
 					<p>Name</p>
 					<p>Webiste</p>

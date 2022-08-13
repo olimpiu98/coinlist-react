@@ -4,7 +4,7 @@ import { Button } from "react-daisyui";
 
 const Exchangestable = (props) => {
 	return (
-		<div className='coin-row'>
+		<div className='exchange-row'>
 			<p>{props.exchanges.trust_score_rank}</p>
 			<span className='img-symbol'>
 				<img className='img-inlist' src={props.exchanges.image} alt='coin logo' />

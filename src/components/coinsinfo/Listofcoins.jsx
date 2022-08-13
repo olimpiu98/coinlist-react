@@ -44,6 +44,11 @@ const Listofcoins = (props) => {
 						{props.coins.circulating_supply.toLocaleString()} {props.coins.symbol}
 					</Link>
 				</p>
+				{props.coins.ath_change_percentage > 0 ? (
+					<p className='positive hide-mobile'>{props.coins.ath_change_percentage.toFixed(2)}%</p>
+				) : (
+					<p className='negative hide-mobile'>{props.coins.ath_change_percentage.toFixed(2)}%</p>
+				)}
 			</div>
 		</>
 	);
