@@ -11,7 +11,7 @@ const Underconstruction = () => {
 						<div className='border border-[#7b83d64f] rounded-lg shadow-lg p-5 md:p-10 mx-2'>
 							<div className='text-center'>
 								<h2 className='text-4xl tracking-tight leading-10 font-extrabold text-gray-300 sm:text-5xl sm:leading-none md:text-6xl'>
-									Under construction <span className='text-[#777fd9] text-base'>page</span>
+									Under construction
 								</h2>
 								<p className='text-md md:text-xl mt-10'>
 									Hmmmm.... We are now sleeping and dreaming about new features to implement.
