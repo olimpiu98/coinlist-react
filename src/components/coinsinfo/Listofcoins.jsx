@@ -32,10 +32,31 @@ const Listofcoins = (props) => {
 						</Link>
 					</p>
 				)}
-				{props.coins.price_change_percentage_24h > 0 ? (
-					<p className='positive'>{props.coins.price_change_percentage_24h.toFixed(2)}%</p>
+
+				{/* {props.coins.price_change_percentage_24h ? (
+									
+										<p
+											className={
+												props.coins.price_change_percentage_24h > 0
+													? "positive"
+													: "negative"
+											}
+										>
+											{props.coins.price_change_percentage_24h
+												? props.coins.price_change_percentage_24h.toFixed(2)
+												: null}
+											%
+										</p> }*/}
+
+				{props.coins.price_change_percentage_24h ? (
+					<p className={props.coins.price_change_percentage_24h > 0 ? "positive" : "negative"}>
+						{props.coins.price_change_percentage_24h
+							? props.coins.price_change_percentage_24h.toFixed(2)
+							: null}
+						%
+					</p>
 				) : (
-					<p className='negative'>{props.coins.price_change_percentage_24h.toFixed(2)}%</p>
+					"?"
 				)}
 				<p className='hide-mobile'>${props.coins.total_volume.toLocaleString()}</p>
 				<p className='hide-mobile'>${props.coins.market_cap.toLocaleString()}</p>
