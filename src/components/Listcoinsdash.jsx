@@ -14,24 +14,30 @@ export default function PaginationLink() {
 	const page = parseInt(query.get("page") || "1", 10);
 	const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=${coinsPerPage}&page=${page}&sparkline=false`;
 	const [loading, setLoading] = useState(true);
-
 	useEffect(() => {
 		const cancelToken = axios.CancelToken.source();
 		try {
-			axios.get(url, { cancelToken: cancelToken.token }).then((response) => {
-				setCoins(response.data);
-				setLoading(false);
-			});
+			axios
+				.get(url, { cancelToken: cancelToken.token })
+				.then((response) => {
+					setCoins(response.data);
+					setLoading(false);
+					console.log(`[dashboard ${page}] Data updated`);
+				})
+				.catch((err) => {
+					if (axios.isCancel(err)) {
+						console.log(`[dashboard${page}] Get complete`);
+					} else console.log(".catch else");
+				});
 		} catch (err) {
-			if (axios.isCancel(err)) {
-				console.log(err.message);
-			}
+			console.log("[dashboard]Error");
 		}
 		return () => {
 			setLoading(true);
+			console.log(`[dashboard${page}] Launch cancel & setLoading true`);
 			cancelToken.cancel();
 		};
-	}, [url]);
+	}, [url, page]);
 
 	const pageNumberLocal = [];
 	for (let i = 1; i <= Math.ceil(5000 / coinsPerPage); i++) {

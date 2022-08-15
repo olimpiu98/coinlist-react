@@ -9,41 +9,48 @@ const Coin = () => {
 	const [coin, setCoin] = useState({});
 	const url = `https://api.coingecko.com/api/v3/coins/${params.coinId}`;
 
+	useEffect(() => {
+		const cancelToken = axios.CancelToken.source();
+		axios
+			.get(url, { cancelToken: cancelToken.token })
+			.then((res) => {
+				setCoin(res.data);
+				console.log(`[/coin/${params.coinId}] Data updated`);
+			})
+			.catch((err) => {
+				if (axios.isCancel(err)) {
+					console.log(`[/coin/${params.coinId}] Get complete`);
+				}
+			});
+		return () => {
+			console.log(`[/coin/${params.coinId}] Cancel function release`);
+			cancelToken.cancel();
+		};
+	}, [url, setCoin, params.coinId]);
+
 	// useEffect(() => {
 	// 	const cancelToken = axios.CancelToken.source();
-	// 	axios
-	// 		.get(url, { cancelToken: cancelToken.token })
-	// 		.then((res) => {
-	// 			setCoin(res.data);
-	// 			console.log("get data from api");
-	// 		})
-	// 		.catch((err) => {
-	// 			if (axios.isCancel(err)) {
-	// 				console.log("cancel token");
-	// 			}
-	// 		});
+	// 	try {
+	// 		console.log("[coin] Try getting data");
+	// 		axios
+	// 			.get(url, { cancelToken: cancelToken.token })
+	// 			.then((response) => {
+	// 				setCoin(response.data);
+	// 				console.log("[coin] Data cancel");
+	// 			})
+	// 			.catch((err) => {
+	// 				if (axios.isCancel(err)) {
+	// 					console.log("[coin] Get complete");
+	// 				} else console.log(".catch else");
+	// 			});
+	// 	} catch (err) {
+	// 		console.log("final catch");
+	// 	}
 	// 	return () => {
+	// 		console.log("[coin] CancelToken");
 	// 		cancelToken.cancel();
 	// 	};
 	// }, [url]);
-	useEffect(() => {
-		const cancelToken = axios.CancelToken.source();
-		try {
-			axios.get(url, { cancelToken: cancelToken.token }).then((response) => {
-				setCoin(response.data);
-				console.log("[coin] data executed");
-			});
-		} catch (err) {
-			console.log("awawwa", err.message);
-			if (axios.isCancel(err)) {
-				console.log(err.message);
-			} else console.log(err.message);
-		}
-		return () => {
-			cancelToken.cancel();
-			console.log("[coin] data cancel");
-		};
-	}, [url]);
 
 	return (
 		<div>
