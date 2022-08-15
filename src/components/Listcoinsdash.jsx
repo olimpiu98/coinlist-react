@@ -13,7 +13,7 @@ export default function PaginationLink() {
 	const query = new URLSearchParams(location.search);
 	const page = parseInt(query.get("page") || "1", 10);
 	const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=${coinsPerPage}&page=${page}&sparkline=false`;
-	const [loading, setLoading] = useState(false);
+	const [loading, setLoading] = useState();
 
 	useEffect(() => {
 		const cancelToken = axios.CancelToken.source();
@@ -21,14 +21,15 @@ export default function PaginationLink() {
 			axios.get(url, { cancelToken: cancelToken.token }).then((response) => {
 				setCoins(response.data);
 				setLoading(false);
-				console.log("got");
+				console.log("finished");
 			});
 		} catch (err) {
 			console.log(err);
 		}
-		setLoading(true);
+
 		return () => {
-			console.log("cancel");
+			console.log("loading");
+			setLoading(true);
 			cancelToken.cancel();
 		};
 	}, [url]);
@@ -49,6 +50,7 @@ export default function PaginationLink() {
 					<Coins coins={coins} />
 					<div className='flex justify-center pt-3 '>
 						<Pagination
+							onChange={window.scrollTo(0, 0)}
 							shape='rounded'
 							variant='outlined'
 							color='primary'
