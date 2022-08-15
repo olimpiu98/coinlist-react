@@ -9,20 +9,39 @@ const Coin = () => {
 	const [coin, setCoin] = useState({});
 	const url = `https://api.coingecko.com/api/v3/coins/${params.coinId}`;
 
+	// useEffect(() => {
+	// 	const cancelToken = axios.CancelToken.source();
+	// 	axios
+	// 		.get(url, { cancelToken: cancelToken.token })
+	// 		.then((res) => {
+	// 			setCoin(res.data);
+	// 			console.log("get data from api");
+	// 		})
+	// 		.catch((err) => {
+	// 			if (axios.isCancel(err)) {
+	// 				console.log("cancel token");
+	// 			}
+	// 		});
+	// 	return () => {
+	// 		cancelToken.cancel();
+	// 	};
+	// }, [url]);
 	useEffect(() => {
 		const cancelToken = axios.CancelToken.source();
-		axios
-			.get(url, { cancelToken: cancelToken.token })
-			.then((res) => {
-				console.log("d");
-				setCoin(res.data);
-			})
-			.catch((err) => {
-				if (axios.isCancel(err)) {
-				}
+		try {
+			axios.get(url, { cancelToken: cancelToken.token }).then((response) => {
+				setCoin(response.data);
+				console.log("[coin] data executed");
 			});
+		} catch (err) {
+			console.log("awawwa", err.message);
+			if (axios.isCancel(err)) {
+				console.log(err.message);
+			} else console.log(err.message);
+		}
 		return () => {
 			cancelToken.cancel();
+			console.log("[coin] data cancel");
 		};
 	}, [url]);
 
