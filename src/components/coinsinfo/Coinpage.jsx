@@ -26,7 +26,7 @@ const Coin = () => {
 			console.log(`[/coin/${params.coinId}] Cancel function release`);
 			cancelToken.cancel();
 		};
-	}, [url, setCoin, params.coinId]);
+	}, [url, params.coinId]);
 
 	// useEffect(() => {
 	// 	const cancelToken = axios.CancelToken.source();

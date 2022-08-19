@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 const Invalidpath = () => {
 	const location = useLocation();
-	console.log(location.pathname);
 	return (
 		<div>
 			<div>

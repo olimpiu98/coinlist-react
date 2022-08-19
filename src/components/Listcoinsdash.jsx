@@ -21,7 +21,7 @@ export default function PaginationLink() {
 				.get(url, { cancelToken: cancelToken.token })
 				.then((response) => {
 					setCoins(response.data);
-					setLoading(false);
+					setLoading((prevLoading) => (prevLoading = false));
 					console.log(`[dashboard ${page}] Data updated`);
 				})
 				.catch((err) => {
@@ -33,7 +33,7 @@ export default function PaginationLink() {
 			console.log("[dashboard]Error");
 		}
 		return () => {
-			setLoading(true);
+			setLoading((prevLoading) => (prevLoading = true));
 			console.log(`[dashboard${page}] Launch cancel & setLoading true`);
 			cancelToken.cancel();
 		};
