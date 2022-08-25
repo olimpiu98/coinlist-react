@@ -28,30 +28,6 @@ const Coin = () => {
 		};
 	}, [url, params.coinId]);
 
-	// useEffect(() => {
-	// 	const cancelToken = axios.CancelToken.source();
-	// 	try {
-	// 		console.log("[coin] Try getting data");
-	// 		axios
-	// 			.get(url, { cancelToken: cancelToken.token })
-	// 			.then((response) => {
-	// 				setCoin(response.data);
-	// 				console.log("[coin] Data cancel");
-	// 			})
-	// 			.catch((err) => {
-	// 				if (axios.isCancel(err)) {
-	// 					console.log("[coin] Get complete");
-	// 				} else console.log(".catch else");
-	// 			});
-	// 	} catch (err) {
-	// 		console.log("final catch");
-	// 	}
-	// 	return () => {
-	// 		console.log("[coin] CancelToken");
-	// 		cancelToken.cancel();
-	// 	};
-	// }, [url]);
-
 	return (
 		<div>
 			<div className='coin-container'>
