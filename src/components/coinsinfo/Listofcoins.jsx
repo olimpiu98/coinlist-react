@@ -33,21 +33,6 @@ const Listofcoins = (props) => {
 					</p>
 				)}
 
-				{/* {props.coins.price_change_percentage_24h ? (
-									
-										<p
-											className={
-												props.coins.price_change_percentage_24h > 0
-													? "positive"
-													: "negative"
-											}
-										>
-											{props.coins.price_change_percentage_24h
-												? props.coins.price_change_percentage_24h.toFixed(2)
-												: null}
-											%
-										</p> }*/}
-
 				{props.coins.price_change_percentage_24h ? (
 					<p className={props.coins.price_change_percentage_24h > 0 ? "positive" : "negative"}>
 						{props.coins.price_change_percentage_24h
